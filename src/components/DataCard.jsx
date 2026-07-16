@@ -1,10 +1,10 @@
 import React from 'react'
-
+    
 const DataCard = ({ userId, id, title, completed }) => {
     return (
-        <div>
+        <a href={`/${id}`}>
             <p>{id}. {title}</p>
-        </div>
+        </a>
     )
 }
 

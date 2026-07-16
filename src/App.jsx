@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import "./App.css"
+import DataDetail from "./components/DataDetail";
 
 // from   
 function Layout() {
@@ -28,6 +29,7 @@ export default function App() {
         <Route index element={<Home />} />
         {/* grid */}
         <Route path="about" element={<About />} />
+        <Route path=":id" element={<DataDetail />} />
         {/*table  */}
         <Route path="contact" element={<Contact name={"Tech AI"} location={"New "} classes={"CSIT"} />} />
       </Route>
