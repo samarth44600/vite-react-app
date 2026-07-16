@@ -3,10 +3,11 @@ import { data } from '../data/data'
 import DataCard from './DataCard'
 
 const DataList = () => {
+    const filteredData = []
     return (
         <div>
             {
-                data.map((d, i) => <DataCard
+                filteredData.map((d, i) => <DataCard
                     key={i}
                     userId={d.userId}
                     id={d.id}
