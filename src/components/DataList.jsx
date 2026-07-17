@@ -5,13 +5,14 @@ import DataCard from './DataCard'
 const DataList = () => {
     const [searchQuery, setSearchQuery] = useState("")
     const [filteredData, setFilteredData] = useState(data)
-
+    // let filteredData = data
     const handleSearch = () => {
         // const filter = searchQuery ? data.filter((d) => d.title == searchQuery) : data
         const filter = searchQuery ? data.filter((d) => d.title.trim().toLowerCase().includes(
             searchQuery.trim().toLowerCase()
         )) : data
         setFilteredData(filter)
+        // filteredData = filter
         console.log("filteredData", filteredData)
     }
     return (
