@@ -16,19 +16,23 @@ const DataList = () => {
         console.log("filteredData", filteredData)
     }
     return (
-        <div>
-            <input type='text' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-            <button onClick={handleSearch} >Search</button>
-            {
-                filteredData.map((d, i) => <DataCard
-                    key={i}
-                    userId={d.userId}
-                    id={d.id}
-                    title={d.title}
-                    completed={d.completed}
+        <div className='listPage'>
+            <input className='searchInput' type='text' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            <button className='searchButton' onClick={handleSearch} >Search</button>
+            <div className='data-list'>
 
-                />)
-            }
+                {
+                    filteredData.map((d, i) => <DataCard
+                        key={i}
+                        userId={d.userId}
+                        id={d.id}
+                        title={d.title}
+                        completed={d.completed}
+
+                    />)
+                }
+            </div>
+
         </div>
     )
 }
