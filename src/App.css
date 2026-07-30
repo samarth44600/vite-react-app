@@ -38,7 +38,7 @@ nav {
   margin-left: 8px;
   transition: all 0.3s ease;
 }
-
+ 
 .searchButton:hover {
   background-color: blue;
   color: white;
