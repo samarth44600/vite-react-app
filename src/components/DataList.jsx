@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { data } from '../data/data'
 import DataCard from './DataCard'
 
 const DataList = () => {
     const [searchQuery, setSearchQuery] = useState("")
-    const [filteredData, setFilteredData] = useState(data)
+    const [filteredData, setFilteredData] = useState([])
     // let filteredData = data
     const handleSearch = () => {
         // const filter = searchQuery ? data.filter((d) => d.title == searchQuery) : data
@@ -14,6 +14,14 @@ const DataList = () => {
         setFilteredData(filter)
         // filteredData = filter
         console.log("filteredData", filteredData)
+    }
+    useEffect(() => {
+        handleFetch()
+    }, [])
+    const handleFetch = async () => {
+        await fetch('http://jsonplaceholder.typicode.com/posts').then((res) => res.json()).then((res) => {
+            setFilteredData(res)
+        })
     }
     return (
         <div className='listPage'>
