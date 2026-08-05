@@ -18,8 +18,8 @@ const DataList = () => {
     useEffect(() => {
         handleFetch()
     }, [])
-    const handleFetch = async () => {
-        await fetch('http://jsonplaceholder.typicode.com/posts').then((res) => res.json()).then((res) => {
+    const handleFetch =  () => {
+         fetch('http://jsonplaceholder.typicode.com/posts').then((res) => res.json()).then((res) => {
             setFilteredData(res)
         })
     }
